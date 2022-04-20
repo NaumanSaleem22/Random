@@ -1,0 +1,113 @@
+<html>
+<head>
+<title>Number Converter</title>
+<script type="text/javascript">
+var a = ['', 'One', 'Two', 'Three', 'Four', 'Five', 'Six', 'Seven', 'Eight', 'Nine'];
+var b = ['Hundred', 'Thousand', 'Lakh', 'Crore'];
+var c_0 = ['Ten', 'Eleven', 'Twelve', 'Thirteen', 'Fourteen', 'Fifteen', 'Sixteen', 'Seventeen', 'Eighteen', 'Ninteen'];
+var d   = ['Twenty', 'Thirty', 'Forty', 'Fifty', 'Sixty', 'Seventy', 'Eighty', 'Ninety'];
+
+function convertNumToWord(number){
+  var c, rm;
+  c = 1;
+  string = '';
+  number == 0 && (string = 'Zero');
+  while (number != 0) {
+    switch (c) {
+      case 1:
+        rm = number % 100;
+        pass(rm);
+        number > 100 && number % 100 != 0 && display('And ');
+        number = ~~(number / 100);
+        break;
+      case 2:
+        rm = number % 10;
+        if (rm != 0) {
+          display(' ');
+          display(b[0]);
+          display(' ');
+          pass(rm);
+        }
+
+        number = ~~(number / 10);
+        break;
+      case 3:
+        rm = number % 100;
+        if (rm != 0) {
+          display(' ');
+          display(b[1]);
+          display(' ');
+          pass(rm);
+        }
+
+        number = ~~(number / 100);
+        break;
+      case 4:
+        rm = number % 100;
+        if (rm != 0) {
+          display(' ');
+          display(b[2]);
+          display(' ');
+          pass(rm);
+        }
+
+        number = ~~(number / 100);
+        break;
+      case 5:
+        rm = number % 100;
+        if (rm != 0) {
+          display(' ');
+          display(b[3]);
+          display(' ');
+          pass(rm);
+        }
+
+        number = ~~(number / 100);
+    }
+    ++c;
+  }
+  return string;
+}
+
+function display(s){
+  var t;
+  t = string;
+  string = s;
+  string += t;
+}
+
+function pass(number){
+  var q, rm;
+  number < 10 && display(a[number]);
+  number > 9 && number < 20 && display(c_0[number - 10]);
+  if (number > 19) {
+    rm = number % 10;
+    if (rm == 0) {
+      q = ~~(number / 10);
+      display(d[q - 2]);
+    }
+     else {
+      q = ~~(number / 10);
+      display(a[rm]);
+      display(' ');
+      display(d[q - 2]);
+    }
+  }
+}
+</script>
+</head>
+<body>
+<input type="text" id="number"><input type="submit" value="Convert" id="convert">
+<div id="converted"></div>
+</body>
+<script>
+document.getElementById("convert").onclick=function() {
+  if(document.getElementById("number").value.length > 9) {
+    document.getElementById("converted").innerHTML="Cannot convert more than nine digits";
+    return;
+  }
+  convertedVal = convertNumToWord(parseInt(document.getElementById("number").value));
+  document.getElementById("converted").innerHTML=convertedVal;
+}
+</script>
+</html>

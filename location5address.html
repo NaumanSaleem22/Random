@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>5</title>
+  </head>
+  <body>
+    <div id="latlng" value="24.821626,67.0342426"></div>
+    <button id="getLoc" onclick="codeLatLng()">get location</button>
+    <div id="test"></div>
+    <script
+      type="text/javascript"
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBn6LDeF0BTGQn3OZnPB-S3nhQhFlAtKi8&callback=initMap&v=weekly"
+    ></script>
+    <script>
+      var geocoder;
+      initialize();
+      codeLatLng();
+      function initialize() {
+        geocoder = new google.maps.Geocoder();
+      }
+
+      function codeLatLng() {
+        var input = document.getElementById("latlng").getAttribute("value");
+        console.log(input);
+        var latlngStr = input.split(",", 2);
+        var lat = parseFloat(latlngStr[0]);
+        var lng = parseFloat(latlngStr[1]);
+
+        var latlng = new google.maps.LatLng(lat, lng);
+        geocoder.geocode(
+          {
+            latLng: latlng,
+          },
+          function (results, status) {
+            document.getElementById("test").innerHTML =
+              "" + results[4].formatted_address;
+            +"";
+          }
+        );
+      }
+    </script>
+  </body>
+</html>

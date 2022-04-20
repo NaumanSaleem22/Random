@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Attendance Table</title>
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link href="./attendance.css" rel="stylesheet" />
+  </head>
+  <body>
+    <button
+      type="button"
+      class="btn btn-primary"
+      data-bs-toggle="modal"
+      data-bs-target="#exampleModal"
+    >
+      Launch Attendance Tracker
+    </button>
+
+    <!-- Modal -->
+    <div
+      class="modal fade"
+      id="exampleModal"
+      tabindex="-1"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+          <div class="modal-header" style="justify-content: center">
+            <h5
+              class="modal-title"
+              id="exampleModalLabel"
+              style="font-size: 18px; font-weight: 600; text-align: center"
+            >
+              <span style="color: #57adf0">Attendance For The Month Of </span>
+              Apr, 2022
+            </h5>
+          </div>
+          <div class="modal-body" id="print-payslip">
+            <div class="main-div-attendance">
+              <div class="id-status-row">
+                <div>
+                  <div class="padding-attendance-row">
+                    <strong> Id: </strong>
+                    <span class="attendance-fontSize">1 </span>
+                  </div>
+                  <div class="padding-attendance-row">
+                    <strong>Date: </strong>
+                    <span
+                      class="attendance-fontSize"
+                      style="color: #0f77c7; font-size: 16px; font-weight: 600"
+                      >Thu,07-04-2022</span
+                    >
+                  </div>
+                </div>
+                <div>
+                  <div class="padding-attendance-row">
+                    <strong>Action :</strong>
+                    <button class="attendance-actionbtn">
+                      <i class="fa fa-edit attendance-fontIcon"></i>
+                    </button>
+                  </div>
+                  <div class="padding-attendance-row">
+                    <strong>Status: </strong>
+                    <span style="color: green">null</span>
+                  </div>
+                </div>
+              </div>
+
+              <div>
+                <div class="padding-attendance-row">
+                  <strong>Check In: </strong
+                  ><span class="attendance-fontSize" style="color: green"
+                    >12:00pm</span
+                  >
+                </div>
+              </div>
+
+              <div>
+                <div class="padding-attendance-row">
+                  <strong>Check Out: </strong>
+                  <span class="attendance-fontSize" style="color: red"
+                    >12:00pm</span
+                  >
+                </div>
+              </div>
+
+              <div class="late-overtime-row padding-attendance-row">
+                <div>
+                  <strong>Worktime: </strong
+                  ><span class="attendance-fontSize">4 hours</span>
+                </div>
+                <div>
+                  <strong>Undertime:</strong
+                  ><span class="attendance-fontSize"> 4 hours</span>
+                </div>
+                <div>
+                  <strong>Overtime:</strong
+                  ><span class="attendance-fontSize"> 4 hours</span>
+                </div>
+                <div>
+                  <strong>Late:</strong>
+                  <span class="attendance-fontSize">3</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="main-div-attendance">
+              <div class="id-status-row">
+                <div>
+                  <div class="padding-attendance-row">
+                    <strong> Id: </strong>
+                    <span class="attendance-fontSize">1 </span>
+                  </div>
+                  <div class="padding-attendance-row">
+                    <strong>Date: </strong>
+                    <span
+                      class="attendance-fontSize"
+                      style="color: #0f77c7; font-size: 16px; font-weight: 600"
+                      >Thu,07-04-2022</span
+                    >
+                  </div>
+                </div>
+                <div>
+                  <div class="padding-attendance-row">
+                    <strong>Action :</strong>
+                    <button class="attendance-actionbtn">
+                      <i class="fa fa-edit attendance-fontIcon"></i>
+                    </button>
+                  </div>
+                  <div class="padding-attendance-row">
+                    <strong>Status: </strong>
+                    <span style="color: green">null</span>
+                  </div>
+                </div>
+              </div>
+
+              <div>
+                <div class="padding-attendance-row">
+                  <strong>Check In: </strong
+                  ><span class="attendance-fontSize" style="color: green"
+                    >12:00pm</span
+                  >
+                </div>
+                <div class="padding-attendance-row">
+                  <span>
+                    <img src="download.png" width="15px" height="15px" />
+                  </span>
+                  <span class="attendance-fontSize">
+                    6 5th Zamzama St, Phase V Defence V Defence Housing
+                    Authority, Karachi, Karachi City, Sindh 75600,
+                    Pakistan</span
+                  >
+                </div>
+              </div>
+
+              <div>
+                <div class="padding-attendance-row">
+                  <strong>Check Out: </strong>
+                  <span class="attendance-fontSize" style="color: red"
+                    >12:00pm</span
+                  >
+                </div>
+                <div class="padding-attendance-row">
+                  <span>
+                    <img src="download.png" width="15px" height="15px" />
+                  </span>
+                  <span class="attendance-fontSize">
+                    6 5th Zamzama St, Phase V Defence V Defence Housing
+                    Authority, Karachi, Karachi City, Sindh 75600,
+                    Pakistan</span
+                  >
+                </div>
+              </div>
+
+              <div class="late-overtime-row padding-attendance-row">
+                <div>
+                  <strong>Worktime: </strong
+                  ><span class="attendance-fontSize">4 hours</span>
+                </div>
+                <div>
+                  <strong>Undertime:</strong
+                  ><span class="attendance-fontSize"> 4 hours</span>
+                </div>
+                <div>
+                  <strong>Overtime:</strong
+                  ><span class="attendance-fontSize"> 4 hours</span>
+                </div>
+                <div>
+                  <strong>Late:</strong>
+                  <span class="attendance-fontSize">3</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-danger"
+              data-bs-dismiss="modal"
+            >
+              Close
+            </button>
+
+            <button type="button" class="btn btn-primary" id="dl-png">
+              Download PNG
+            </button>
+            <button
+              type="button"
+              class="btn btn-primary"
+              onclick="genpdf()"
+              id="dl-png"
+            >
+              Download PDF
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!--Edited -->
+    <script src="https://raw.githack.com/eKoopmans/html2pdf/master/dist/html2pdf.bundle.js"></script>
+    <script src="./html2canvas.min.js"></script>
+
+    <script>
+      document.getElementById("dl-png").onclick = function () {
+        const screenshotTarget = document.getElementById("print-payslip");
+        html2canvas(screenshotTarget).then((canvas) => {
+          const base64image = canvas.toDataURL("image/png");
+          var anchor = document.createElement("a");
+          anchor.setAttribute("href", base64image);
+          anchor.setAttribute("download", "payslip.png");
+          anchor.click();
+          anchor.remove();
+        });
+      };
+    </script>
+
+    <!-- For PDF -->
+    <script>
+      function genpdf() {
+        const element = document.getElementById("print-payslip");
+        html2pdf().from(element).save();
+      }
+    </script>
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
